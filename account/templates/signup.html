@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    {% extends "theme.html" %}
+    {% block content %}
+
+    <h2 align="center">注册Product Hunt 账户</h2>
+    <br>
+    <form method="POST" action="{%  url '注册页面' %}" align="center">
+        {% csrf_token %}
+
+        用户名：
+        <br>
+        <input type="text" name="用户名">
+        <br>
+        {{ 用户名错误 }}
+        <br>
+        密码：
+        <br>
+        <input type="password" name="密码">
+        <br>
+        <br>
+        确认密码：
+        <br>
+        <input type="password" name="确认密码">
+
+        <br>
+        {{ 密码错误 }}
+        <br>
+        <input class='btn btn-primary' type="submit" value="立即注册">
+
+
+    </form>
+
+    {% endblock content %}
+</head>
+<body>
+
+</body>
+</html>

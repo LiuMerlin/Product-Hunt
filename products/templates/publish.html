@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publish</title>
+</head>
+<body>
+    {% extends "theme.html" %}
+    {% block content %}
+    <h2 align="center">发布新应用</h2>
+    <br>
+    <form method="POST" action="{%  url '发布页面' %}" align="center" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        标题：
+        <br>
+        <input value="例：百词斩" type="textbox" name="标题">
+        <br>
+        <br>
+        介绍：
+        <br>
+        <textarea cols="100" rows="10" name="介绍">在这里写APP介绍</textarea>
+        <br>
+        <br>
+        APP链接：
+        <br>
+        <input value="http://" type="text" name="APP链接">
+        <br>
+        <br>
+        APP图标（缩略图）：
+        <input type="file" name="APP图标">
+        <br>
+        <br>
+        大图：
+        <input type="file" name="大图">
+        <br>
+
+        {{ 错误 }}
+        <br>
+
+
+
+        <input class='btn btn-primary' type="submit" value="发布">
+
+
+    </form>
+
+    {% endblock content %}
+
+</body>
+</html>
